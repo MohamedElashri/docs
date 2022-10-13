@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Gauss - UC-LHCb Documentation Website</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Gauss";
+        var mkdocs_page_input_path = "Gauss/run.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> UC-LHCb Documentation Website
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LHCb</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Allen/build.html">Allen</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Boole/run.html">Boole</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="run.html">Gauss</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#quick-setup">Quick Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#starterkit-example">starterkit Example</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nightly-version">Nightly version</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Forms/QEE_MC_Request.html">Forms</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UC-LHCb Documentation Website</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>LHCb &raquo;</li>
+      <li>Gauss</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MohamedElashri/docs/edit/master/docs/Gauss/run.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gauss-documentation">Gauss Documentation<a class="headerlink" href="#gauss-documentation" title="Permanent link">&para;</a></h1>
+<p>The purpose of this page is to collect some new documentation for important aspects about LHCb simulation software called <code>Gauss</code>. All of this assumes that you have already a current LHCb software installation (i.e on <code>lxplus</code>)</p>
+<h2 id="quick-setup">Quick Setup<a class="headerlink" href="#quick-setup" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Set up Gauss: <code>lb-dev Gauss/v49r21</code> 
+you can decide which version specifying what is after Gauss so it is like <code>Gauss/&lt;version&gt;</code></p>
+</li>
+<li>
+<p>cd to the Gauss dir <code>cd ./GaussDev_v49r21</code></p>
+</li>
+<li>
+<p>We will need the <code>DecFiles</code> package which is available on CERN Gitlab (this is where the pre-defined decay is there)
+<code>git lb-clone-pkg Gen/DecFiles</code></p>
+</li>
+<li>
+<p>We now build Gauss by running <code>make</code></p>
+</li>
+</ul>
+<p>This can be done on one command like </p>
+<pre><code>lb-dev Gauss/v49r21 \\
+cd ./GaussDev_v49r21 \\ 
+git lb-clone-pkg Gen/DecFiles \\
+make 
+</code></pre>
+<p>Hint: This will install <code>Sim09</code></p>
+<h2 id="starterkit-example">starterkit Example<a class="headerlink" href="#starterkit-example" title="Permanent link">&para;</a></h2>
+<p>To run the startedkit example which deals with this decay $\left.D^{*+} \rightarrow D^{0}\left(\rightarrow K^{+} K^{-} \mu^{+} \mu^{-}\right) \pi^{+}\right)$. This decay is pre-defined in Gauss and is given the event type # <code>27175000</code>. This is determined by the <code>Decfiles</code> library. The <code>DecFile</code> controls the decay itself (i.e. what EvtGen does) as well as provide any event-type specific configuration (e.g. generator cuts). They exist in the <code>Gen/DecFile</code> package. The content of the Decfile is the following:</p>
+<pre><code class="language-bash"># EventType: 27175000                                                                                                                                                                                                                                      
+#                                                                                                                                                                                                                                                          
+# Descriptor: [D*(2010)+ -&gt; (D0 -&gt; {K+ K- mu+ mu-}) pi+]cc                                                                                                                                                                                                 
+#                                                                                                                                                                                                                                                          
+# NickName: Dst_D0pi,KKmumu=DecProdCut                                                                                                                                                                                                                     
+#                                                                                                                                                                                                                                                          
+# Cuts: DaughtersInLHCb                                                                                                                                                                                                                                    
+#                                                                                                                                                                                                                                                          
+# Documentation: Forces the D* decay in generic b-bbar / c-cbar events + Requires products to be in LHCb acceptance                                                                                                                                        
+# EndDocumentation                                                                                                                                                                                                                                         
+#                                                                                                                                                                                                                                                          
+# PhysicsWG: Charm                                                                                                                                                                                                                                         
+# Tested: Yes                                                                                                                                                                                                                                              
+# Responsible: Luisa Arrabito                                                                                                                                                                                                                              
+# Email: unknown@&lt;nospam&gt;cern.ch                                                                                                                                                                                                                           
+# Date: 20091215                                                                                                                                                                                                                                           
+#                                                                                                                                                                                                                                                          
+
+Alias MyD0 D0                                                                                                                                                                                                                                              
+Alias MyantiD0 anti-D0                                                                                                                                                                                                                                     
+ChargeConj MyD0 MyantiD0                                                                                                                                                                                                                                   
+
+Decay D*+sig                                                                                                                                                                                                                                               
+  1.000 MyD0  pi+    VSS;                                                                                                                                                                                                                                  
+Enddecay                                                                                                                                                                                                                                                   
+CDecay D*-sig                                                                                                                                                                                                                                              
+
+Decay MyD0                                                                                                                                                                                                                                                 
+  1.000 K+ K- mu+ mu- PHSP;                                                                                                                                                                                                                                
+Enddecay                                                                                                                                                                                                                                                   
+CDecay MyantiD0                                                                                                                                                                                                                                            
+#                                                                                                                                                                                                                                                          
+End  
+</code></pre>
+<p>This Decfile code contains the Information which tells Gauss what to except when calling <code>&lt;event-type&gt;.py</code> as an option. There is a current parser <a href="http://lbeventtype.web.cern.ch/">online</a> to help you with event type. </p>
+<p>To run Gauss you need to specify the options which tells Gauss about what you need. you can pass the options using the syntax </p>
+<p>./run gaudirun.py <code>option</code> Gauss-Job.py</p>
+<p>But the best way is to include all the options in <code>Gauss-Job.py</code> which is where you need to call things. For example </p>
+<p>Instead of running</p>
+<pre><code>./run gaudirun.py 
+        '$APPCONFIGOPTS/Gauss/Beam6500GeV-md100-2016-nu1.6.py' \  # Sets beam energy and position
+        '$APPCONFIGOPTS/Gauss/EnableSpillover-25ns.py' \  # Enables spillover (only Run2)
+        '$APPCONFIGOPTS/Gauss/DataType-2016.py' \
+        '$APPCONFIGOPTS/Gauss/RICHRandomHits.py' \  # Random hits in RICH for occupancy
+        '$DECFILESROOT/options/{eventnumber}.py' \  # Event type containing the signal
+        '$LBPYTHIA8ROOT/options/Pythia8.py' \  # Setting Pythia8 as generator
+        '$APPCONFIGOPTS/Gauss/G4PL_FTFP_BERT_EmNoCuts.py' \  # Physics simulated by Geant4
+        Gauss-Job.py
+</code></pre>
+<p>You can  define your own options in <code>Gauss-Job.py</code> As the fOllowing:</p>
+<pre><code>from Gauss.Configuration import *
+importOptions(&quot;$APPCONFIGOPTS/Gauss/Beam6500GeV-md100-2016-nu1.6.py&quot;)
+importOptions(&quot;$APPCONFIGOPTS/Gauss/EnableSpillover-25ns.py&quot;)
+importOptions(&quot;$APPCONFIGOPTS/Gauss/DataType-2016.py&quot;)
+importOptions(&quot;$APPCONFIGOPTS/Gauss/RICHRandomHits.py&quot;)
+importOptions(&quot;$DECFILESROOT/options/27175000.py&quot;)
+importOptions(&quot;$LBPYTHIA8ROOT/options/Pythia8.py&quot;)
+importOptions(&quot;$APPCONFIGOPTS/Gauss/G4PL_FTFP_BERT_EmNoCuts.py&quot;)
+
+
+GaussGen = GenInit(&quot;GaussGen&quot;)
+GaussGen.FirstEventNumber = 1
+GaussGen.RunNumber = 1082
+
+from Configurables import LHCbApp
+LHCbApp().DDDBtag = 'dddb-20170721-3'
+LHCbApp().CondDBtag = 'sim-20170721-2-vc-md100'
+LHCbApp().EvtMax = 5
+</code></pre>
+<p>To run the following Simulation you cd to Gauss dir and run the following: </p>
+<pre><code>./run gaudirun.py ../Gauss-Job.py
+</code></pre>
+<p>Which will be equivalent to </p>
+<pre><code class="language-bash">./run gaudirun.py '$APPCONFIGOPTS/Gauss/Beam6500GeV-md100-2016-nu1.6.py'  '$LBPYTHIA8ROOT/options/Pythia8.py' '$DECFILESROOT/options/27175000.py' ../Gauss-Job.py
+</code></pre>
+<p>Which of course will depend on where you have <code>Gauss-Job.py</code> file</p>
+<p>Hint: you will need first to run <code>lhcb-proxy-init</code> to obtain the permissions to run Gauss. </p>
+<p>Hint: This will take long time ~20 minutes because we asked for a full detector simulation by Geant4 but we can only tell Gauss to run the generator phase of simulation only by adding <code>'$GAUSSOPTS/GenStandAlone.py'</code> as an option. </p>
+<p>Now lets give some information about the options which we told gauss to use.  The following table summarize that: </p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'$APPCONFIGOPTS/Gauss/Beam6500GeV-md100-2016-nu1.6.py’</code></td>
+<td>Sets beam energy and position</td>
+</tr>
+<tr>
+<td><code>'$APPCONFIGOPTS/Gauss/EnableSpillover-25ns.py'</code></td>
+<td>Enables spillover (only Run2, not sure about RUN3 yet)<br></td>
+</tr>
+<tr>
+<td><code>'$APPCONFIGOPTS/Gauss/DataType-2016.py'</code></td>
+<td>Tells Gauss which data category to expect (divided by year)</td>
+</tr>
+<tr>
+<td><code>'$APPCONFIGOPTS/Gauss/RICHRandomHits.py'</code></td>
+<td>Random hits in RICH for occupancy</td>
+</tr>
+<tr>
+<td><code>'$DECFILESROOT/options/{eventnumber}.py'</code></td>
+<td>Event type containing the signal</td>
+</tr>
+<tr>
+<td><code>'$LBPYTHIA8ROOT/options/Pythia8.py'</code></td>
+<td>This tells Gauss to use pythia as signal generator</td>
+</tr>
+<tr>
+<td><code>'$APPCONFIGOPTS/Gauss/G4PL_FTFP_BERT_EmNoCuts.py'</code></td>
+<td>This tells Gauss to use Geant4 as detetor simulation tool with config</td>
+</tr>
+<tr>
+<td><code>'$GAUSSOPTS/GenStandAlone.py'</code></td>
+<td>Run only signal generation part and ignore full detetor simulation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nightly-version">Nightly version<a class="headerlink" href="#nightly-version" title="Permanent link">&para;</a></h2>
+<p>This is how we can run the nightly version of Gauss</p>
+<p>The general syntax is </p>
+<pre><code>lb-run --nighlty lhcb-gauss-dev/SLOTID Gauss/HEAD gaudirun.py Gauss-Job.py
+</code></pre>
+<p>Where <code>SLOTID</code> would be <code>Today</code> or the one that we are interested</p>
+<p>The default is <code>Today</code> and could also be used as follows </p>
+<pre><code>lb-run --nightly lhcb-gauss-dev Gauss/HEAD  gaudirun.py Gauss-Job.py
+</code></pre>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://twiki.cern.ch/twiki/bin/view/LHCb/LHCbSimulation"> Simulation in LHCb Twiki </a></li>
+<li><a href="https://twiki.cern.ch/twiki/bin/view/LHCb/LHCbSoftwareTutorials"> LHCb Software Training Twiki</a></li>
+<li><a href="https://lhcb.github.io/starterkit-lessons/second-analysis-steps/simulation.html">Gauss in LHCb Starterkit</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Boole/run.html" class="btn btn-neutral float-left" title="Boole"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Forms/QEE_MC_Request.html" class="btn btn-neutral float-right" title="Forms">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MohamedElashri/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Boole/run.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Forms/QEE_MC_Request.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
