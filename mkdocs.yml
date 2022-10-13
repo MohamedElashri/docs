@@ -1,0 +1,22 @@
+site_name: UC-LHCb Documentation Website
+repo_url: https://github.com/MohamedElashri/docs
+nav:
+    - Home: 'index.md'
+    - LHCb: 
+        - 'Allen': 'Allen/build.md'
+        - 'Boole': 'Boole/run.md'
+        - 'Gauss': 'Gauss/run.md'
+        - 'Forms': 'Forms/QEE_MC_Request.md'
+plugins:
+    - search:
+        indexing: 'full'
+markdown_extensions:
+    toc:
+        permalink: true
+theme:
+    name: readthedocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - cpp
+        - python

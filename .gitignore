@@ -1,0 +1,6 @@
+.vscode/*
+site/*
+*.html
+*.xml.gz
+*.xml
+.DS_Store
